@@ -68,7 +68,7 @@ module.exports = function(grunt) {
         "fonts/HTML-CSS/Asana-Math",
         "jax/output/HTML-CSS/fonts/Asana-Math",
         "unpacked/jax/output/HTML-CSS/fonts/Asana-Math",
-        //"jax/output/SVG/fonts/Asana-Math",
+        "jax/output/SVG/fonts/Asana-Math",
         "unpacked/jax/output/SVG/fonts/Asana-Math"
       ],
       fontGyrePagella: [
@@ -76,49 +76,49 @@ module.exports = function(grunt) {
         "jax/output/HTML-CSS/fonts/Gyre-Pagella",
         "unpacked/jax/output/HTML-CSS/fonts/Gyre-Pagella",
         "jax/output/SVG/fonts/Gyre-Pagella",
-        //"unpacked/jax/output/SVG/fonts/Gyre-Pagella"
+        "unpacked/jax/output/SVG/fonts/Gyre-Pagella"
       ],
       fontGyreTermes: [
         "fonts/HTML-CSS/Gyre-Termes",
         "jax/output/HTML-CSS/fonts/Gyre-Termes",
         "unpacked/jax/output/HTML-CSS/fonts/Gyre-Termes",
         "jax/output/SVG/fonts/Gyre-Termes",
-        //"unpacked/jax/output/SVG/fonts/Gyre-Termes"
+        "unpacked/jax/output/SVG/fonts/Gyre-Termes"
       ],
       fontLatinModern: [
         "fonts/HTML-CSS/Latin-Modern",
         "jax/output/HTML-CSS/fonts/Latin-Modern",
         "unpacked/jax/output/HTML-CSS/fonts/Latin-Modern",
         "jax/output/SVG/fonts/Latin-Modern",
-        //"unpacked/jax/output/SVG/fonts/Latin-Modern"
+        "unpacked/jax/output/SVG/fonts/Latin-Modern"
       ],
       fontNeoEuler: [
         "fonts/HTML-CSS/Neo-Euler",
         "jax/output/HTML-CSS/fonts/Neo-Euler",
         "unpacked/jax/output/HTML-CSS/fonts/Neo-Euler",
         "jax/output/SVG/fonts/Neo-Euler",
-        //"unpacked/jax/output/SVG/fonts/Neo-Euler"
+        "unpacked/jax/output/SVG/fonts/Neo-Euler"
       ],
       fontStix: [
         "fonts/HTML-CSS/STIX",
         "jax/output/HTML-CSS/fonts/STIX",
         "unpacked/jax/output/HTML-CSS/fonts/STIX",
         "jax/output/SVG/fonts/STIX",
-        //"unpacked/jax/output/SVG/fonts/STIX"
+        "unpacked/jax/output/SVG/fonts/STIX"
       ],
       fontStixWeb: [
         "fonts/HTML-CSS/STIX-Web",
         "jax/output/HTML-CSS/fonts/STIX-Web",
         "unpacked/jax/output/HTML-CSS/fonts/STIX-Web",
         "jax/output/SVG/fonts/STIX-Web",
-        //"unpacked/jax/output/SVG/fonts/STIX-Web"
+        "unpacked/jax/output/SVG/fonts/STIX-Web"
       ],
       fontTeX: [
         "fonts/HTML-CSS/TeX",
         "jax/output/HTML-CSS/fonts/TeX",
         "unpacked/jax/output/HTML-CSS/fonts/TeX",
         "jax/output/SVG/fonts/TeX",
-        //"unpacked/jax/output/SVG/fonts/TeX"
+        "unpacked/jax/output/SVG/fonts/TeX"
       ],
       //
       // Remove font formats
@@ -338,7 +338,7 @@ module.exports = function(grunt) {
     "clean:fontStixWeb",
     "clean:fontTeX",
     //      Font formats. Pick at least one (unless you use SVG output; then clean all).
-    "clean:dropFonts", // when using SVG output
+    //"clean:dropFonts", // when using SVG output
     "clean:eot",
     "clean:otf",
     "clean:png",
@@ -368,36 +368,42 @@ module.exports = function(grunt) {
     //      Early choices.
     "clean:unpacked",
     //        "clean:packed", // pick one -- packed for production, unpacked for development.
+    // Ally note: We will be using a default config, don't delete all of them
     //"clean:allConfigs", // if you do not need any combined configuration files.
     //      Fonts. Pick at least one! Check notes above on configurations.
-    //"clean:fontAsana",
+    "clean:fontAsana",
     "clean:fontGyrePagella",
     "clean:fontGyreTermes",
     "clean:fontLatinModern",
     "clean:fontNeoEuler",
-    "clean:fontStix",
-    "clean:fontStixWeb",
+    // Ally note: Certain formulas seem to require the STIX and TeX fonts
+    //"clean:fontStix",
+    //"clean:fontStixWeb",
     //"clean:fontTeX",
     //      Font formats. Pick at least one (unless you use SVG output; then clean all).
-    "clean:dropFonts", // when using SVG output
+    //"clean:dropFonts", // when using SVG output
     "clean:eot",
     "clean:otf",
     "clean:png",
+    // Ally note: Retain the SVG output format
     //"clean:svg",
     "clean:woff",
     //      Input. Pick at least one.
+    // Ally note: It seems that all inputs are required as they all have dependencies on each other
     //"clean:asciimathInput",
-    "clean:mathmlInput",
+    //"clean:mathmlInput",
     //"clean:texInput",
     //       Output
-    "clean:htmlCssOutput",
-    "clean:mathmlOutput",
+    // Ally note: It seems that all outputs are required as they all have dependencies on each other
+    //"clean:htmlCssOutput",
+    //"clean:mathmlOutput",
     //        "clean:svgOutput",
     // Extensions. You probably want to leave the set matching your choices.
     "clean:extensionsAsciimath",
     //        "clean:extensionsMathml",
     //"clean:extensionsTeX",
-    "clean:extensionHtmlCss",
+    // Ally note: We need the HTML & css extensions in epub
+    //"clean:extensionHtmlCss",
     // Other items
     "clean:locales",
     "clean:miscConfig",
