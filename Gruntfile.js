@@ -338,7 +338,7 @@ module.exports = function(grunt) {
     "clean:fontStixWeb",
     "clean:fontTeX",
     //      Font formats. Pick at least one (unless you use SVG output; then clean all).
-    //"clean:dropFonts", // when using SVG output
+    "clean:dropFonts", // when using SVG output
     "clean:eot",
     "clean:otf",
     "clean:png",
@@ -381,6 +381,7 @@ module.exports = function(grunt) {
     //"clean:fontStixWeb",
     //"clean:fontTeX",
     //      Font formats. Pick at least one (unless you use SVG output; then clean all).
+    // Ally note: Do not drop all the fonts as the Stix and TeX fonts are necessary
     //"clean:dropFonts", // when using SVG output
     "clean:eot",
     "clean:otf",
